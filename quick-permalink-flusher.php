@@ -13,8 +13,6 @@
 
 namespace QuickPermalinkFlusher;
 
-use QuickPermalinkFlusher\App\Adminbar;
-
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
