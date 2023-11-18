@@ -12,6 +12,7 @@ class Adminbar {
      */
     function __construct() {
         add_action( 'wp_before_admin_bar_render', [$this, 'qpf_add_adminbar_menu'] );
+        add_action( 'wp_enqueue_scripts', [$this, 'qpf_load_assets'] );
     }
 
     /**
@@ -32,5 +33,32 @@ class Adminbar {
                 ),
             )
         );
+    }
+
+    /**
+     * Load assets
+     */
+    function qpf_load_assets() {
+        ?>
+            <script type="text/javascript">
+
+                function qpf_rewrite_rules() {
+                    jQuery.post(ajaxurl, {
+
+                        action: 'qpf_flush_rules',
+                        _wpnonce: '<?php echo wp_create_nonce('qpf_flush_rules_nonce'); ?>',
+
+                    }, function(response) {
+
+                        if (response.success) {
+                            alert('Permalink reset successfully!');
+                        } else {
+                            alert('Failed to reset permalink. Please try again');
+                        }
+                    });
+                }
+                
+            </script>
+        <?php
     }
 }
