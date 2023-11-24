@@ -13,29 +13,38 @@ class Cron {
     function __construct() {
         register_activation_hook( QPF , [$this, 'qpf_activation_function'] );
 
-        add_action( 'my_minute_event', [$this,'my_minute_event_callback'] );
+        add_filter( 'cron_schedules', [$this,'qpf_custom_cron_intervals'] );
+
+        add_action( 'qpf_daily', [$this,'qpf_event_everyday_callback'] );
     }
+
+    /**
+     * register cron schedules
+     */
+    function qpf_custom_cron_intervals( $schedules ) {
+		$schedules['daily'] = array(
+			'interval' => 24*60*60,
+			'display'  => __( 'Every day', 'qpf' ),
+		);
+		return $schedules;
+	}
 
     /**
      * Execute cron job from here
      */
-    function my_minute_event_callback() {
+    function qpf_event_everyday_callback() {
 
-        $current_value = get_option( 'habib_option' ) ?? 1;
-
-        if( $current_value ) {
-            $current_value =+ 1;
-        }
-
-        update_option( 'habib_option', $current_value );
+        //flush the permalink
+        flush_rewrite_rules();
     }
 
     /**
-     * Register cron scheduler
+     * Register cron scheduler event
      */
     function qpf_activation_function() {
-        if ( ! wp_next_scheduled( 'my_minute_event' ) ) {
-            wp_schedule_event( time(), 'minute', 'my_minute_event' );
+
+        if ( ! wp_next_scheduled( 'qpf_daily' ) ) {
+            wp_schedule_event( time(), 'daily', 'qpf_daily' );
         }
     }
 }

@@ -54,6 +54,8 @@ final class Quick_Permalink_Flusher {
         
         //kick off adminbar class
         new App\Adminbar();
+
+        new App\Cron();
     }
 
     /**
