@@ -23,7 +23,8 @@ class Cron {
      */
     function qpf_custom_cron_intervals( $schedules ) {
 		$schedules['daily'] = array(
-			'interval' => 24*60*60,
+			// 'interval' => 24*60*60,
+			'interval' => 60,
 			'display'  => __( 'Every day', 'qpf' ),
 		);
 		return $schedules;
@@ -36,6 +37,10 @@ class Cron {
 
         //flush the permalink
         flush_rewrite_rules();
+
+        $cron = get_option( 'cron_work' ) ?? 0;
+
+        update_option( 'cron_work', $cron++ );
     }
 
     /**
