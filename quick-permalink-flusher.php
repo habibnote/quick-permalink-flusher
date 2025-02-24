@@ -34,7 +34,6 @@ final class Quick_Permalink_Flusher {
      * Include all files
      */
     private function include() {
-        // require_once( dirname( __FILE__ ) . '/inc/functions.php' );
         require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
     }
 
@@ -54,8 +53,6 @@ final class Quick_Permalink_Flusher {
         
         //kick off adminbar class
         new App\Adminbar();
-
-        new App\Cron();
     }
 
     /**

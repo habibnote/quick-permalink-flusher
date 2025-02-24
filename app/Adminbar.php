@@ -37,7 +37,7 @@ class Adminbar {
                 'href'  => '#',
                 'meta'  => array(
                     'title'   => __('Reset Permalinks'),
-                    'onclick' => 'qpf_rewrite_rules(); return false;',
+                    'onclick' => 'qpf_rewrite_rules(); return false',
                 ),
             )
         );
