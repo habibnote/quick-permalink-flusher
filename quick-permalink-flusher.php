@@ -8,7 +8,8 @@
  * Requires PHP:      7.2
  * Author:            Md. Habib
  * Author URI:        https://me.habibnote.com
- * Text Domain:       qpf
+ * Text Domain:       qpflusher
+ * Domain Path:       /languages
 */
 
 namespace QuickPermalinkFlusher;

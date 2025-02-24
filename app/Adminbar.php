@@ -36,7 +36,7 @@ class Adminbar {
                 'title' => 'Reset Permalinks',
                 'href'  => '#',
                 'meta'  => array(
-                    'title'   => __('Reset Permalinks'),
+                    'title'   => __( 'Reset Permalinks', 'qpflusher' ),
                     'onclick' => 'qpf_rewrite_rules(); return false',
                 ),
             )
@@ -49,7 +49,7 @@ class Adminbar {
     function qpf_load_assets() {
 
         // Enqueue your script
-        wp_enqueue_script( 'qpf-scritp', QPF_ASSET . '/js/script.js', array('jquery'), null, true );
+        wp_enqueue_script( 'qpf-scritp', QPF_ASSET . '/js/script.js', array( 'jquery' ), null, true );
 
         // Pass Ajax URL to script
         $admin_url =  admin_url( 'admin-ajax.php' );
