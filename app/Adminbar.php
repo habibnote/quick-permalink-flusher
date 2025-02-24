@@ -36,7 +36,7 @@ class Adminbar {
                 'title' => 'Reset Permalinks',
                 'href'  => '#',
                 'meta'  => array(
-                    'title'   => __( 'Reset Permalinks', 'qpflusher' ),
+                    'title'   => __( 'Reset Permalinks', 'quick-permalink-flusher' ),
                     'onclick' => 'qpf_rewrite_rules(); return false',
                 ),
             )
@@ -49,7 +49,7 @@ class Adminbar {
     function qpf_load_assets() {
 
         // Enqueue your script
-        wp_enqueue_script( 'qpf-scritp', QPF_ASSET . '/js/script.js', array( 'jquery' ), null, true );
+        wp_enqueue_script( 'qpf-scritp', QPF_ASSET . '/js/script.js', array( 'jquery' ), '0.0.1', true );
 
         // Pass Ajax URL to script
         $admin_url =  admin_url( 'admin-ajax.php' );
@@ -63,15 +63,21 @@ class Adminbar {
      * Processed ajax request
      */
     function qpf_ajax_flusher() {
-
-        $nonce = $_POST[ '_nonce' ];
-
-        if( wp_verify_nonce( $nonce, 'qpf_nonce' ) ) {
-
-            //flush the permalink
-            flush_rewrite_rules();
+        // Check the nonce
+        if ( isset( $_POST['_nonce'] ) ) {
+            $nonce = sanitize_text_field( wp_unslash( $_POST['_nonce'] ) );
     
-            wp_send_json_success();
+            // Verify the nonce
+            if( wp_verify_nonce( $nonce, 'qpf_nonce' ) ) {
+                // Flush the permalinks
+                flush_rewrite_rules();
+        
+                wp_send_json_success();
+            } else {
+                wp_send_json_error( array( 'message' => 'Nonce verification failed' ) );
+            }
+        } else {
+            wp_send_json_error( array( 'message' => 'Nonce is missing' ) );
         }
     }
 }

@@ -1,16 +1,18 @@
-<?php 
+<?php
 /*
  * Plugin Name:       Quick Permalink Flusher
- * Plugin URI:        https://https://github.com/habibnote/quick-permalink-flusher
- * Description:       This plugin for quick wordpress website quick permalink flusher
- * Version:           0.0.1
+ * Plugin URI:        https://github.com/habibnote/quick-permalink-flusher
+ * Description:       This plugin for quick wordpress website permalink flusher
+ * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Author:            Md. Habib
- * Author URI:        https://me.habibnote.com
- * Text Domain:       qpflusher
+ * Author:            habibnote
+ * Author URI:        https://www.linkedin.com/in/habib333/
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       quick-permalink-flusher
  * Domain Path:       /languages
-*/
+ */
 
 namespace QuickPermalinkFlusher;
 
@@ -67,8 +69,6 @@ final class Quick_Permalink_Flusher {
 
         return self::$instance;
     }
-
-
 }
 
 /**
