@@ -3,7 +3,7 @@ Contributors: habibnote
 Tags: permalink, flusher, quick
 Requires at least: 5.2
 Tested up to: 6.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -39,14 +39,14 @@ Yes, this plugin works for custom post types and any changes made to permalink s
 
 == Changelog ==
 
-= 1.0.0 =
+= v1.0.1 =
+* Fix very small issues
+
+= v1.0.0 =
 * Initial release.
 * Added a button to flush permalink structure.
 
 == Upgrade Notice ==
-
-= 1.0.0 =
-This is the initial release of the plugin.
 
 == Acknowledgements ==
 
