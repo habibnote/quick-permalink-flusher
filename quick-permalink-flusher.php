@@ -3,7 +3,7 @@
  * Plugin Name:       Quick Permalink Flusher
  * Plugin URI:        https://github.com/habibnote/quick-permalink-flusher
  * Description:       This plugin for quick wordpress website permalink flusher
- * Version:           1.0.0
+ * Version:           1.0.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Md. Habib
