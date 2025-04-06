@@ -1,9 +1,9 @@
 === Quick Permalink Flusher ===
 Contributors: habibnote
-Tags: permalink, flusher, quick
+Tags: permalink, flusher, quick, url, link, flush, rewrite
 Requires at least: 5.2
 Tested up to: 6.7
-Stable tag: 1.0.0
+Stable tag: 1.0.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,10 @@ Yes, this plugin works for custom post types and any changes made to permalink s
 
 == Changelog ==
 
+= v1.0.4 =
+* Fix very small issues
+* Please update it to lightweight
+
 = v1.0.3 =
 * Fix very small issues
 
@@ -50,6 +54,18 @@ Yes, this plugin works for custom post types and any changes made to permalink s
 * Added a button to flush permalink structure.
 
 == Upgrade Notice ==
+
+= v1.0.4 =
+Fix very small issues. Please update it to lightweight
+
+= v1.0.3 =
+Fix very small issues
+
+= v1.0.2 =
+Fix very small issues
+
+= v1.0.0 =
+Added a button to flush permalink structure.
 
 == Acknowledgements ==
 
